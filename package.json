@@ -5,13 +5,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon mqqt_server.js"
+    "server": "nodemon mqqt_server.js --watch mqqt_server.js",
+    "standard": "standard --fix",
+    "start": "nodemon ./consumers/consumer1.js --watch ./consumers/consumer1.js --watch ./consumers/connector.js",
+    "start2": "nodemon ./consumers/consumer2.js --watch ./consumers/consumer2.js --watch ./consumers/connector.js",
+    "app": "nodemon app_server.js --watch app_server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.5.0",
+    "bluebird": "^3.5.0",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
     "mosca": "^2.5.1",
+    "mqtt": "^2.9.1",
+    "randomstring": "^1.1.5",
     "redis": "^2.7.1"
   }
 }
